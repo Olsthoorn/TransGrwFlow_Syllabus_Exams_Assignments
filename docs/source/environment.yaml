@@ -1,3 +1,4 @@
+name: sphinx
 channels:
   - defaults
   - conda-forge
@@ -11,3 +12,4 @@ dependencies:
   - pandas
   - openpyxl
   - sphinx-copybutton
+prefix: /Users/Theo/miniconda3/envs/sphinx

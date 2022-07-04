@@ -5,6 +5,9 @@ build:
   tools:
     python: "3.9"
 
+conda:
+  environment: dosc/source/environment.yaml
+
 # Build from the docs/source directory with Sphinx
 sphinx:
   configuration: docs/source/conf.py
