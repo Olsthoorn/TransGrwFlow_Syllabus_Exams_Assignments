@@ -13,3 +13,4 @@ dependencies:
   - openpyxl
   - sphinx-copybutton
 prefix: /Users/Theo/miniconda3/envs/sphinx
+

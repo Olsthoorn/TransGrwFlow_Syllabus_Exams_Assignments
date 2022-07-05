@@ -14,16 +14,13 @@ import os
 import sys
 #sys.path.insert(0, os.path.abspath('../../'))
 
-
 # -- Project information -----------------------------------------------------
-
 project = 'TransientGroundwaterFlowIHEDelft'
 copyright = '2022, Prof. dr.ir. T.N.Olsthoorn'
 author = 'Prof. dr.ir. T.N.Olsthoorn'
 
 # The full version, including alpha/beta/rc tags
 release = '2022 01'
-
 
 # -- General configuration ---------------------------------------------------
 
