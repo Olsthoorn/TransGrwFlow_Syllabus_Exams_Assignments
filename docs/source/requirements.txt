@@ -2,3 +2,4 @@
   ipykernel>=6.13.0
   nbsphinx
   sphinxcontrib.bibtex
+  sphinx_copybutton
