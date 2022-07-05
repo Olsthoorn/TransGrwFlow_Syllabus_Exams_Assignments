@@ -1,3 +1,4 @@
   sphinx>=4.5
   ipykernel>=6.13.0
   nbsphinx
+  sphinxcontrib.bibtex
