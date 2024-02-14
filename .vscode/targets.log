@@ -10,18 +10,16 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Sun Jul  3 17:17:29 2022
+# Make data base, printed on Tue Jul  5 14:06:29 2022
 
 # Variables
 
 # automatic
- 
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
 # environment
-ELECTRON_NO_ATTACH_CONSOLE = 1
-# environment
+ 
 VSCODE_LOG_NATIVE = false
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
@@ -30,7 +28,7 @@ VSCODE_LOG_NATIVE = false
 # automatic
 @F = $(notdir $@)
 # makefile
-CURDIR := /Users/Theo/Entiteiten/IHE/ReadTheDocsSyllabus
+CURDIR := /Users/Theo/Entiteiten/IHE/GIT_RTD_Syllabus_exams_assignments_ppts
 # makefile
 SHELL = /bin/sh
 # environment
@@ -44,13 +42,13 @@ VSCODE_VERBOSE_LOGGING = true
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/90/m51x_b713y561gzh2kzy18d00000gq/T/vscode-ipc-c91dab94-6dca-49ae-8e8f-4550499573a9.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/90/m51x_b713y561gzh2kzy18d00000gq/T/vscode-ipc-f8c24db4-c7fd-4ca6-addc-c687aee57956.sock
 # environment
-VSCODE_CWD = /Users/Theo/Entiteiten/IHE/ReadTheDocsSyllabus
+VSCODE_CWD = /
 # environment
-PATH = /Users/Theo/miniconda3/envs/sphinx/bin:/Users/Theo/miniconda3/condabin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/opt/X11/bin:/Library/Apple/usr/bin:/Users/Theo/.local/bin
+PATH = /Users/Theo/miniconda3/condabin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/opt/X11/bin:/Library/Apple/usr/bin:/Users/Theo/.local/bin
 # environment
-LaunchInstanceID = E1AC6FD3-9ECF-4B7E-8F52-09D73C5B6BB7
+LaunchInstanceID = A4692482-0EFD-4D15-9735-144A1D8D0A5B
 # environment
 VSCODE_LOG_STACK = false
 # environment
@@ -58,7 +56,7 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.h7X7JvgxZx/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.bMLODGjLnq/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -66,7 +64,7 @@ CONDA_EXE = /Users/Theo/miniconda3/bin/conda
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
-PWD = /Users/Theo/Entiteiten/IHE/ReadTheDocsSyllabus
+PWD = /Users/Theo/Entiteiten/IHE/GIT_RTD_Syllabus_exams_assignments_ppts
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
@@ -76,21 +74,15 @@ HOME = /Users/Theo
 # default
 MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
 # environment
-VSCODE_CLI = 1
-# environment
 VSCODE_CODE_CACHE_PATH = /Users/Theo/Library/Application Support/Code/CachedData/30d9c6cd9483b2cc586687151bcbcd635f373630
 # environment
 LOGNAME = Theo
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
-# environment
-CONDA_PROMPT_MODIFIER = (sphinx) 
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
-# environment
-CONDA_DEFAULT_ENV = sphinx
 # environment
 XPC_FLAGS = 0x0
 # default
@@ -98,23 +90,19 @@ MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # environment
-SHLVL = 3
+SHLVL = 1
 # default
 MAKE_VERSION := 3.81
 # environment
 USER = Theo
 # makefile
 .DEFAULT_GOAL := 
-# environment
-TERM_SESSION_ID = 5D8157E6-9C19-4A39-BE77-E3648B6F3195
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
-CONDA_SHLVL = 1
+CONDA_SHLVL = 0
 # default
 MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
-# environment
-TERM_PROGRAM = Apple_Terminal
 # default
 .VARIABLES := 
 # environment
@@ -130,9 +118,7 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-TERM_PROGRAM_VERSION = 445
-# environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.91454137.91454143.9D9D79E3-729E-4DB6-985B-9CD6EF883101
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.91454137.91454143
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
@@ -162,18 +148,13 @@ _CE_M =
 # environment
 MAKELEVEL := 0
 # environment
-CONDA_PREFIX = /Users/Theo/miniconda3/envs/sphinx
+LANG = C
 # environment
-TERM = xterm-256color
-# environment
- 
-VSCODE_PID = 83149
+VSCODE_PID = 634
 # environment
 _CE_CONDA = 
-# environment
-LANG = C
 # variable set hash-table stats:
-# Load=78/1024=8%, Rehash=0, Collisions=2/99=2%
+# Load=69/1024=7%, Rehash=0, Collisions=1/90=1%
 
 # Pattern-specific Variable Values
 
@@ -181,9 +162,9 @@ LANG = C
 
 # Directories
 
-# . (device 16777225, inode 92065786): 6 files, no impossibilities.
+# . (device 16777222, inode 92065786): 11 files, no impossibilities.
 
-# 6 files, no impossibilities in 1 directories.
+# 11 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -243,6 +224,7 @@ GNUmakefile:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # files hash-table stats:
+ 
 # Load=6/1024=1%, Rehash=0, Collisions=0/17=0%
 # VPATH Search Paths
 
@@ -255,6 +237,6 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Sun Jul  3 17:17:29 2022
+# Finished Make data base on Tue Jul  5 14:06:29 2022
 
  

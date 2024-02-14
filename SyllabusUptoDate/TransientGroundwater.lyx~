@@ -1349,7 +1349,10 @@ Note with respect to the exercises
 \end_layout
 
 \begin_layout Standard
-Today, there are two skills that students should acquire: Python and QGIS.
+Nowadays, there are two skills that students should acquire to be able to
+ do sound quantiative analysis like it is the case in this course: Python
+ and QGIS.
+ My motivation is as follows:
 \end_layout
 
 \begin_layout Standard
@@ -4749,7 +4752,7 @@ The compressibility of water is
 
 \begin_layout Standard
 where 
-\begin_inset Formula $\alpha\approx4.4\times10^{10}\,\mathrm{m^{2}/N}$
+\begin_inset Formula $\alpha\approx4.4\times10^{-10}\,/\mathrm{Pa}$
 \end_inset
 
 .

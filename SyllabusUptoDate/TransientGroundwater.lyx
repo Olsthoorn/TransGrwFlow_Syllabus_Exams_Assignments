@@ -4752,7 +4752,7 @@ The compressibility of water is
 
 \begin_layout Standard
 where 
-\begin_inset Formula $\alpha\approx4.4\times10^{10}\,\mathrm{m^{2}/N}$
+\begin_inset Formula $\alpha\approx4.4\times10^{-10}\,/\mathrm{Pa}$
 \end_inset
 
 .
@@ -14903,7 +14903,7 @@ def Wh(u, rho):
 
 \begin_layout Plain Layout
 
-    wh = np.frompyfunc(w, 2, 2) # 2 inputs and tow outputs h and err
+    wh = np.frompyfunc(w, 2, 2) # 2 inputs and two outputs h and err
 \end_layout
 
 \begin_layout Plain Layout
