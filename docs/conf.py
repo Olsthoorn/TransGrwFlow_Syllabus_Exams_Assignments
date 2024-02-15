@@ -16,7 +16,7 @@ source_suffix={
 }
 source_encoding='UTF-8'
 source_parcers=['.md', 'recommonmark.parser.CommonMarkParser']
-root_doc='./source/index'
+root_doc='source/index'
 exclude_pattersn=[]
 include_patterns=[]
 numfig=True
