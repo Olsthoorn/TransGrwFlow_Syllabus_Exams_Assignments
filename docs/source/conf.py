@@ -12,7 +12,7 @@ release = '2024.0rc1'
 
 html_theme = 'sphinx_rtd_theme'
 
-extensions=[]
+extensions=['myst_parser']
 source_suffix = {
   '.rst': 'restructuredtext',
   '.txt': 'restructuredtext',
@@ -22,7 +22,7 @@ source_encoding = 'UTF-8'
 source_parcers = []
 root_doc = 'index'
 exclude_pattersn = []
-include_patterns = ['*.md', '*.rst', '*.txt', 'notebooks/*ipynb']
+include_patterns = ['*.md', '*.rst', '*.txt', 'notebooks/*.ipynb']
 numfig = True
 numfig_secnum_dpeth = 1
 
