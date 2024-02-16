@@ -16,9 +16,9 @@ source_suffix={
 }
 source_encoding='UTF-8'
 source_parcers=['.md', 'recommonmark.parser.CommonMarkParser']
-root_doc='index'
+root_doc='source/index'
 exclude_pattersn=[]
-include_patterns=['source/*.rst', 'source/*.txt']
+include_patterns=['source/*.rst', 'source/*.txt', 'source/', 'source/notebooks/*ipnb']
 numfig=True
 numfig_secnum_dpeth=1
 
