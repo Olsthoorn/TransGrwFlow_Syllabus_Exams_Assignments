@@ -18,10 +18,14 @@
         <script src="_static/documentation_options.js?v=8bbba70f"></script>
         <script src="_static/doctools.js?v=888ff710"></script>
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Assignment 2016 2022 with answers" href="notebooks/AssWithAnswers.html" />
+    <link rel="prev" title="Previous exams with answers" href="exams_from_2006%2Banswers.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -63,6 +67,56 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="exams_from_2006.html">Previous exams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="exams_from_2006%2Banswers.html">Previous exams with answers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Old Assignments:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Previous Assignments</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#assignment-jan-2022-wells-along-a-river">Assignment Jan 2022. Wells along a river.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#problem-statement">Problem statement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-work-out-the-assignment">How to work out the assignment</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#assignment-jan-2021-wells-along-a-river-in-a-closed-valley">Assignment Jan 2021. Wells along a river in a closed valley.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#assignment-questions">Assignment questions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-pumping-test-data">The pumping-test data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#assignment-jan-2020-same-as-jan-2018">Assignment Jan 2020. Same as Jan 2018</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#assignment-jan-2019-a-building-pit-next-to-a-river">Assignment Jan 2019. A building pit next to a river.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#problem-statement-1">Problem statement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#questions">Questions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hints">Hints</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#assignment-jan-2018-water-company-uses-asr-system-to-prevent-river-inflow-during-summer">Assignment Jan 2018. Water company uses ASR system to prevent river inflow during summer.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#assignment-jan-2017-water-company-uses-asr-system-to-prevent-extraction-from-tiver-during-summer">Assignment Jan 2017. Water company uses ASR system to prevent extraction from tiver during summer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#problem-statement-2">Problem statement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hints-and-further-information">Hints and further information:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#steps-to-take">Steps to take:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#suggestions">Suggestions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-data-as-a-csv-comma-separated-values">The data as a csv (comma separated values)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#assignment-jan-2016-several-exercises-based-on-the-syllabus">Assignment Jan 2016. Several exercises based on the syllabus.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#setup">Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#capillary-rise">Capillary rise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tidal-fluctuations">Tidal fluctuations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#temperature-variation-in-the-subsurface">Temperature variation in the subsurface:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#effect-of-a-sudden-change-of-the-water-level-in-a-river">Effect of a sudden change of the water level in a river</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#decay-of-head-in-a-strip-of-land-of-given-width-characteristic-time-of-the-groundwater-system">Decay of head in a strip of land of given width (characteristic time of the groundwater system)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#implement-the-theis-and-hantush-well-functions-mathrm-w-u-and-mathrm-w-u-r-lambda-as-a-function-of-1-u">Implement the Theis and Hantush well functions <span class="math notranslate nohighlight">\(\mathrm{W}(u)\)</span> and <span class="math notranslate nohighlight">\(\mathrm{W}(u,r/\lambda)\)</span> as a function of <span class="math notranslate nohighlight">\(1/u\)</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pumping-test-dalem">Pumping test Dalem</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/AssWithAnswers.html">Assignment 2016 2022 with answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/AssJan2022.html">Assignment Jan 2022. Wells along a river</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/AssJan2021.html">Assignment Jan 2021. Wells along a river in a closed valley</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/AssJan2020.html">Assigment Jan 2020</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/AssJan2019.html">Assignment Jan 2019. A building pit next to a river</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/AssJan2017.html">Assignment Jan 2017 preventing extraction from river</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/AssJan2016.html">Assignment Jan 2016. Several exercises based on the syllabus</a></li>
 </ul>
 
         </div>
@@ -106,7 +160,7 @@
 <figure class="align-default" id="id3">
 <a class="reference internal image-reference" href="_images/AssJan2022_1.png"><img alt="Situation, map and cross section." src="_images/AssJan2022_1.png" style="width: 100.0%;" /></a>
 <figcaption>
-<p><span class="caption-text">Situation, map and cross section.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 48 </span><span class="caption-text">Situation, map and cross section.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <ol class="arabic simple">
@@ -137,14 +191,14 @@
 <figure class="align-default" id="id4">
 <a class="reference internal image-reference" href="_images/AssJan2021_1.png"><img alt="Cross section through the valley." src="_images/AssJan2021_1.png" style="width: 100.0%;" /></a>
 <figcaption>
-<p><span class="caption-text">Cross section through the valley.</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 49 </span><span class="caption-text">Cross section through the valley.</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>One pumping well and three observation wells were installed first, and a pumping test was done on it to determine the aquifer properties, i.e. its transmissivity <span class="math notranslate nohighlight">\(kD\)</span> and its storage coefficient, i.e. its specific yield <span class="math notranslate nohighlight">\(S_{y}\)</span>. The pumping lasted for 1 months (30 days) at a rate of <span class="math notranslate nohighlight">\(Q=600\,\mathrm{m^{3}/d}\)</span>. During this time, the heads in the well and in the piezometers were monitored from which the drawdown relative to the initial situation was determined. These darwdowns are provided in a table in an accompanying spreadsheet. The header of the table shows at which distance from this well the observation wells were placed. These observation wells (also called piezometers) are not shown on the cross section and the map because they are too close to the well to be shown on this scale.</p>
 <figure class="align-default" id="id5">
 <a class="reference internal image-reference" href="_images/AssJan2021_2.png"><img alt="Map of the valley with the final three well in place. The observation wells used in the pumping test are not shown as they are too close to the well for the scale of this map." src="_images/AssJan2021_2.png" style="width: 100.0%;" /></a>
 <figcaption>
-<p><span class="caption-text">Map of the valley with the final three well in place. The observation wells used in the pumping test are not shown as they are too close to the well for the scale of this map.</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 50 </span><span class="caption-text">Map of the valley with the final three well in place. The observation wells used in the pumping test are not shown as they are too close to the well for the scale of this map.</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>Each student obtains a spreadsheet with unique the pumping-test data. You find the spreadsheet with your name in the folder on BBB named “Assignment”.</p>
@@ -180,7 +234,7 @@
 <figure class="align-default" id="id6">
 <a class="reference internal image-reference" href="_images/AssJan2019_1.png"><img alt="Situation sketch." src="_images/AssJan2019_1.png" style="width: 100.0%;" /></a>
 <figcaption>
-<p><span class="caption-text">Situation sketch.</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 51 </span><span class="caption-text">Situation sketch.</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <ol class="arabic simple">
@@ -234,7 +288,7 @@
 <figure class="align-default" id="id7">
 <a class="reference internal image-reference" href="_images/AssJan2018_1.png"><img alt="Situation sketch." src="_images/AssJan2018_1.png" style="width: 100.0%;" /></a>
 <figcaption>
-<p><span class="caption-text">Situation sketch.</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 52 </span><span class="caption-text">Situation sketch.</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>In order to solve the problem that this causes for the drinking water supply, the drinking water company has suggested an Aquifer Storage and Recovery system (these so-called ASR systems are becoming more and more popular). It wants to take in more river water during winter and inject it through a well (or wells) at some distance from the river into the local water-table aquifer, so that this water can be extracted during the next summer. This way, no water-intake will be necessary during the summer months.</p>
@@ -508,7 +562,7 @@
 <figure class="align-default" id="id8">
 <a class="reference internal image-reference" href="_images/Dalem_cross_sectioin.png"><img alt="Cross section pumping test Dalem (Kruseman &amp; De Ridder, 1970, 1994)" src="_images/Dalem_cross_sectioin.png" style="width: 80.0%;" /></a>
 <figcaption>
-<p><span class="caption-text">Cross section pumping test Dalem (Kruseman &amp; De Ridder, 1970, 1994)</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 53 </span><span class="caption-text">Cross section pumping test Dalem (Kruseman &amp; De Ridder, 1970, 1994)</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>The data are given below in a csv form:</p>
@@ -700,7 +754,10 @@
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="exams_from_2006%2Banswers.html" class="btn btn-neutral float-left" title="Previous exams with answers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="notebooks/AssWithAnswers.html" class="btn btn-neutral float-right" title="Assignment 2016 2022 with answers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

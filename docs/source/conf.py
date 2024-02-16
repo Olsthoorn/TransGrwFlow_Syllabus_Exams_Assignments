@@ -12,7 +12,7 @@ release = '2024.0rc1'
 
 html_theme = 'sphinx_rtd_theme'
 
-extensions=['myst_parser']
+extensions=['myst_parser', 'nbsphinx']
 source_suffix = {
   '.rst': 'restructuredtext',
   '.txt': 'restructuredtext',

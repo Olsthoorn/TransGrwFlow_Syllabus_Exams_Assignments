@@ -29,15 +29,15 @@ Welcome to TransientGroundwaterFlowIHEDelft's documentation!
    :maxdepth: 0
    :caption: Old Assignments:
 
-   source/old_assignments
-   source/notebooks/AssWithAnswers
-   source/notebooks/AssJan2022
-   source/notebooks/AssJan2021
-   source/notebooks/AssJan2020
-   source/notebooks/AssJan2019
-   source/notebooks/AssJan2017
-   source/notebooks/AssJan2016
-   source/notebooks/Techniques
+   old_assignments
+   notebooks/AssWithAnswers
+   notebooks/AssJan2022
+   notebooks/AssJan2021
+   notebooks/AssJan2020
+   notebooks/AssJan2019
+   notebooks/AssJan2017
+   notebooks/AssJan2016
+   notebooks/Techniques
 
 
 Indices and tables
