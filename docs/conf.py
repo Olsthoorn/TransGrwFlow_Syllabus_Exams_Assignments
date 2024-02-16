@@ -15,7 +15,7 @@ source_suffix = {
   '.md': 'markdown',
 }
 source_encoding = 'UTF-8'
-source_parcers = ['.md', 'recommonmark.parser.CommonMarkParser']
+source_parcers = ['.md']
 root_doc = 'index'
 exclude_pattersn = []
 include_patterns = ['index.rst', 'source/*.md', 'source/*.rst', 'source/*.txt', 'source/', 'source/notebooks/*ipnb']
