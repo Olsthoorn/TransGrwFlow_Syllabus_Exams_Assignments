@@ -9,17 +9,17 @@ import sys, os
 #sys..path.append(os.path.abspath('sphinxext'))
 #extensions=['extensions']
 extensions=[]
-source_suffix={
+source_suffix = {
   '.rst': 'restructuredtext',
   '.txt': 'restructuredtext',
   '.md': 'markdown',
 }
-source_encoding='UTF-8'
-source_parcers=['.md', 'recommonmark.parser.CommonMarkParser']
-root_doc='index'
-exclude_pattersn=[]
-include_patterns=['source/*.rst', 'source/*.txt', 'source/', 'source/notebooks/*ipnb']
-numfig=True
-numfig_secnum_dpeth=1
+source_encoding = 'UTF-8'
+source_parcers = ['.md', 'recommonmark.parser.CommonMarkParser']
+root_doc = 'index'
+exclude_pattersn = []
+include_patterns = ['index.rst', 'source/*.md', 'source/*.rst', 'source/*.txt', 'source/', 'source/notebooks/*ipnb']
+numfig = True
+numfig_secnum_dpeth = 1
 
 
