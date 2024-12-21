@@ -1,13 +1,13 @@
-# How to geenrated the documentation??
+# How to generate the documentation??
 
 The documenation consists of the
 
 *. Sysllabus
 *. The old exams (2006-2022)
-*. The old exams + answer
+*. The old exams + answers
 *. Previous assigments
 *. Previous assigments worked out
-*. Techniues (useful python techniques
+*. Techniues notebook (constains useful python techniques)
 
 The project directory is as follows
 
@@ -35,13 +35,16 @@ ReadTheDocsSyllabus
             pictures  # softlink to the original directory ../../SyllabusUptoDate/pictures
                 all the pictures, about 210 in total
 
-            confpy                  # generated automatcally by sphinx-quickstart and edited to reflect the current project
+            conf.py                 # generated automatcally by sphinx-quickstart and edited to reflect the current project
             index.rst               # TOC tree for the current project (generated and then adapted)
             rerquirements.txt       # Required by Readthedocs
 
-            syllabys_tex_to_rst.py          # Run this to prepare the exported tex file to the rst file in the source directory
-            old_exams_tex_to_rst.py         # Run  this to prepare the exporeted two tex files to the two rst source file for the old exams (with and without answers)
-            old_assignments_tex_to_rst.py   # Run this to convert the exported tex file with the old assigments to the rst file in the source directory. 
+            syllabys_tex_to_rst.py          # Run this to prepare the exported tex file exported from LyX
+                                            # to the rst file in the source directory
+            old_exams_tex_to_rst.py         # Run  this to prepare the exporeted 2 tex files exported from LyX
+                                            # to the 2 rst source files for the old exams (with and without answers)
+            old_assignments_tex_to_rst.py   # Run this to convert the tex file exported from LyX with the old assigments
+                                            # to the rst file in the source directory. 
 
             TransientGroundwater.rst        # The rst file of the syllabus to build the html from
             exams_from_2006.rst             # The rst file of the old exams to build the html from
@@ -53,14 +56,14 @@ ReadTheDocsSyllabus
         build
             doctrees
                 nbsphinx  # generated in the build process
-                    notebooks # generated in the build process
-                    # all the pictures automatically renamed.
-                norebooks # generated in the build process
-            html #The built html documentation. Start with clicking on index.html
-                index.html # start file, click this to start the documentation in the browser.
+                notebooks # generated in the build process
+                # all the pictures automatically renamed.
+                notebooks # generated in the build process
+            html # The built html documentation. Start with clicking on index.html
+            index.html # start file, click this to start the documentation in the browser.
             # more html files
 
-    SyllabusUptoDate
+    SyllabusUptoDate contains
         notebooks
             # The original notebooks in which the old assignments are worked out one by one.
         Other
@@ -88,26 +91,23 @@ ReadTheDocsSyllabus
     ``
 
 
-    The original documentation in the directory SyllabusUptoDate is in its .LyX files.
+    The original documentation in the directory `SyllabusUptoDate` is in its `.LyX` files.
 
-    After any of the LyX files has been changed save it and export from LyX to pdflatex, yielding the tex file of the same name.
+    After any of the `LyX` files has been changed save it and export from `LyX` to `pdflatex`, which yields the `.tex` file of the same basename.
 
-    The notebooks, one as an intro, one for useful Python techniques and the others each for one assignment if a given course year
-    may be updated in jupyter, Ipython or rather in vscode. No export needs to be done.
+    The notebooks, one as an intro, one for useful Python techniques and the others each for one assignment of a given course year
+    may be updated in jupyter, Ipython or rather in VScode. No export needs to be done.
 
-    The from the docs/source directory run each of the .py files (except conf.py) ton convert the tex files in the SyllabusUptoDate directory
-    to the required restructured text source files (.rst) from which the documentation will be built.
+    Then,  from the `project/docs/source directory`, run each of the `.py` files (except `conf.py`) to convert the `.tex` files in the `project/SyllabusUptoDate` directory to the required restructured text source files (.rst) from which the documentation will be built.
 
-    When done, move up to the docs directory
-    and issue the commands
+    When done, move up to the`prject/docs' directory
+    and issue the commands:
 
-    make clean  # this may be omitted of one file was edited as the build process with see it. Just to make sure you get a complete new build, you may use it.
-    make html  # generated the html files
+    make clean  # this may be omitted if one file was edited, as the build process with see it.
+                # Just to make sure you get a complete new build, you may use it.
+    make html   # generated the `.html` files
 
     finally:
-    cd to the build/html directory and click the
-    index.html file to start up the documentation in the browser.
+    cd to the `project/docs/build/html` directory and click the `index.html` file to start up the documentation in the browser.
 
-
-    Theo Olsthoorn
-    July 4, 2022
+    @Theo Olsthoorn, 2022/07/04, 2022. typos 2024/12/21
