@@ -1,0 +1,442 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass extreport
+\begin_preamble
+%\usepackage{epstopdf} % to include .eps graphics files with pdfLaTeX
+\usepackage{flafter}   % Don't place floats before their definition
+%\usepackage{topcapt}  % Define \topcation for placing captions above tables (not in gwTeX)
+
+\usepackage{xurl}      % better URL setting, uses old url package
+
+\usepackage{xcolor}
+\definecolor{darkblue}{rgb}{0,0,0.4}
+\usepackage[]{hyperref} % Generates all cross references
+\hypersetup{            % Setting options for hyperref package
+	breaklinks=true,    % break line with long hyperlinks
+	colorlinks=true,    % coloured links
+	linkcolor=blue,
+	filecolor=magenta,
+	urlcolor=darkblue,
+	citecolor=blue,
+	backref=page
+} 
+
+\usepackage{memhfixc}  % remove conflict between the memoir class & hyperref
+\usepackage{pdfsync}   % enable tex source and pdf output syncronicity
+
+\usepackage{memhfixc}  % remove conflict between the memoir class & hyperref
+\usepackage{pdfsync}   % enable tex source and pdf output syncronicity
+
+\usepackage{alltt}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command biber
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine biblatex
+\cite_engine_type authoryear
+\biblio_options hyperref=true, backref=true, backrefstyle=three,backreffloats=true,indexing=bib,date=year
+\biblatex_bibstyle authoryear
+\biblatex_citestyle authoryear
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\listings_params "language=Python,extendedchars=false,frameround=fttt,numbers=none,% left,line numbers use none,numberstyle={\tiny},stepnumber=2,% line numbers only every so many,numbersep=9pt,% how far line numbers from text?,showspaces=false,showstringspaces=false,showtabs=false,tab={\rightarrowfill},basicstyle={\small},keywordstyle={\color{blue}},commentstyle={\color{green}},%,stringstyle={\ttfamily \color{magenta}},identifierstyle={\color{black}}"
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Proof that the analytic solution with sin-wave boundary is correct
+\end_layout
+
+\begin_layout Author
+prof.
+ dr.ir.
+ T.N.Olsthoorn
+\end_layout
+
+\begin_layout Date
+2024-02-15
+\end_layout
+
+\begin_layout Section*
+Intro
+\end_layout
+
+\begin_layout Standard
+The partial differential equation for the trainsient flow in the aquifer
+ with spatially constant trasnmissivity 
+\begin_inset Formula $kD$
+\end_inset
+
+ and storage coefficient 
+\begin_inset Formula $S$
+\end_inset
+
+ was derived to be
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+kD\frac{\partial^{2}\phi}{\partial x^{2}}=S\frac{\partial\phi}{\partial t}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The proposed solution was
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\phi\left(x,t\right)=Ae^{-ax}\sin\left(\omega t-bx\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To prove this and find out how what the parameters 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+ are, we fill this equation into the partial differential equation.
+ For this we have to differentiate the solution twice with respect to 
+\begin_inset Formula $x$
+\end_inset
+
+ and once with respect to time 
+\begin_inset Formula $t$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial\phi}{\partial x}=-aA^{-ax}\sin\left(\omega t-bx\right)-bAe^{-ax}\cos\left(\omega t-bx\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Differentiating once more with respect to 
+\begin_inset Formula $x$
+\end_inset
+
+ gives
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\frac{\partial^{2}\phi}{\partial x^{2}} & =a^{2}A^{-ax}\sin\left(\omega t-bx\right)+abA^{-ax}\cos\left(\omega t-bx\right)+abAe^{-ax}\cos\left(\omega t-bx\right)-b^{2}Ae^{-ax}\sin\left(\omega t-bx\right)\\
+ & =Ae^{-ax}\left[\left(a^{2}-b^{2}\right)\sin\left(\omega t-bx\right)+2ab\cos\left(\omega t-bx\right)\right]
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now we must take the derivative of the solution with respect to time
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial\phi}{\partial t}=\omega Ae^{-ax}\cos\left(\omega t-bx\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then filling the obtained expressions for 
+\begin_inset Formula $\frac{\partial^{2}\phi}{\partial x^{2}}$
+\end_inset
+
+ and 
+\begin_inset Formula $\frac{\partial\phi}{\partial x}$
+\end_inset
+
+ in the partial differential equation yields, after dividing out 
+\begin_inset Formula $A^{-ax}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+kD\left[\left(a^{2}-b^{2}\right)\sin\left(\omega t-bx\right)+2ab\cos\left(\omega t-bx\right)\right]=S\omega\cos\left(\omega t-bx\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This equation can only be true if the term with the 
+\begin_inset Formula $\sin$
+\end_inset
+
+ is zero, which is the case when 
+\begin_inset Formula $a^{2}-b^{2}=0$
+\end_inset
+
+.
+ Therefore, we have
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a^{2}-b^{2}=0\rightarrow a=+b\,\,\,or\,\,\,a=-b
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Because 
+\begin_inset Formula $a=-b$
+\end_inset
+
+ is not physically possible, we obtain 
+\begin_inset Formula $a=b$
+\end_inset
+
+.
+ And, therefore, with 
+\begin_inset Formula $b=a$
+\end_inset
+
+, the equation reduces to
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+kD2a^{2}\cos\left(\omega t-ax\right)=S\omega\cos\left(\omega t-ax\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+After dividing out 
+\begin_inset Formula $\cos\left(\omega t-ax\right)$
+\end_inset
+
+ on both sides we get
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+kD2a^{2}=\omega S
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+or
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a=\sqrt{\frac{\omega S}{2kD}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We have now derived how the damping and delay factor 
+\begin_inset Formula $a$
+\end_inset
+
+ is constructed from the 
+\begin_inset Formula $\omega$
+\end_inset
+
+, the storage coefficient 
+\begin_inset Formula $S$
+\end_inset
+
+ and the transmissivity 
+\begin_inset Formula $kD$
+\end_inset
+
+, which shows on what the damping factor and delay factor 
+\begin_inset Formula $a$
+\end_inset
+
+ depends.
+\end_layout
+
+\begin_layout Standard
+We check its dimension, which should be 
+\begin_inset Formula $1/L$
+\end_inset
+
+ because 
+\begin_inset Formula $ax$
+\end_inset
+
+ should be dimensionless.
+ 
+\end_layout
+
+\begin_layout Standard
+Here is the check:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a=\sqrt{\frac{\omega S}{2kD}}\propto\left[\sqrt{\frac{1}{T}\frac{1}{\frac{L^{2}}{T}}}\right]=\left[\frac{1}{L}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+With this expression we know that the damping is propertional to the root
+ of 
+\begin_inset Formula $\omega$
+\end_inset
+
+, the root of 
+\begin_inset Formula $S$
+\end_inset
+
+ and inversely proportional to the root of the transmissivity 
+\begin_inset Formula $kD$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+It may be more natural to think in terms of 
+\begin_inset Formula $L=\frac{1}{a}$
+\end_inset
+
+ as a characteristic length of this groundwater setting
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L=\sqrt{\frac{2kD}{\omega S}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+——
+\end_layout
+
+\end_body
+\end_document

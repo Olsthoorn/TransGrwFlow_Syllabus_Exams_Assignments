@@ -1,0 +1,612 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass extreport
+\begin_preamble
+%\usepackage{epstopdf} % to include .eps graphics files with pdfLaTeX
+\usepackage{flafter}   % Don't place floats before their definition
+%\usepackage{topcapt}  % Define \topcation for placing captions above tables (not in gwTeX)
+
+\usepackage{xurl}      % better URL setting, uses old url package
+
+\usepackage{xcolor}
+\definecolor{darkblue}{rgb}{0,0,0.4}
+\usepackage[]{hyperref} % Generates all cross references
+\hypersetup{            % Setting options for hyperref package
+	breaklinks=true,    % break line with long hyperlinks
+	colorlinks=true,    % coloured links
+	linkcolor=blue,
+	filecolor=magenta,
+	urlcolor=darkblue,
+	citecolor=blue,
+	backref=page
+} 
+
+\usepackage{memhfixc}  % remove conflict between the memoir class & hyperref
+\usepackage{pdfsync}   % enable tex source and pdf output syncronicity
+
+\usepackage{memhfixc}  % remove conflict between the memoir class & hyperref
+\usepackage{pdfsync}   % enable tex source and pdf output syncronicity
+
+\usepackage{alltt}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command biber
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine biblatex
+\cite_engine_type authoryear
+\biblio_options hyperref=true, backref=true, backrefstyle=three,backreffloats=true,indexing=bib,date=year
+\biblatex_bibstyle authoryear
+\biblatex_citestyle authoryear
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\listings_params "language=Python,extendedchars=false,frameround=fttt,numbers=none,% left,line numbers use none,numberstyle={\tiny},stepnumber=2,% line numbers only every so many,numbersep=9pt,% how far line numbers from text?,showspaces=false,showstringspaces=false,showtabs=false,tab={\rightarrowfill},basicstyle={\small},keywordstyle={\color{blue}},commentstyle={\color{green}},%,stringstyle={\ttfamily \color{magenta}},identifierstyle={\color{black}}"
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Diver (pressure gauge) and barometer pressure correction
+\begin_inset Newline newline
+\end_inset
+
+Transient Groundwater Course IHE
+\end_layout
+
+\begin_layout Author
+Prof.
+ dr.ir.
+ T.N.
+ Olsthoorn
+\end_layout
+
+\begin_layout Date
+2024-02-09
+\end_layout
+
+\begin_layout Section
+Intro
+\end_layout
+
+\begin_layout Standard
+Nowadays pressure gauges are in wide use to register groundwater heads.
+ Most pressure gauges meaure absolute pressure, which prevents a nessesary
+ vent to the atmosphere that would easily clog and disturb the meaurements.
+ Absolute pressures also register the barometer pressure on top of that
+ of the water column above the gauge, which also disturbs the measurements.
+ Therefore pressure data require the so-called barometer correction before
+ they can be used.
+\end_layout
+
+\begin_layout Section
+Barometer correction
+\end_layout
+
+\begin_layout Standard
+The absolute pressure 
+\begin_inset Formula $p$
+\end_inset
+
+ measured at an elevation 
+\begin_inset Formula $z$
+\end_inset
+
+ below the water table equals
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+p=\rho g\left(h-z\right)+b
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $h$
+\end_inset
+
+ is the elevation of the water surface in the piezometer and 
+\begin_inset Formula $h-z$
+\end_inset
+
+ is the length of the water column in the piezometer above the logger at
+ elevation 
+\begin_inset Formula $z$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+ is the barometer pressure.
+ Internally the average barometer pressure 
+\begin_inset Formula $\overline{b}$
+\end_inset
+
+ is subtracted from the abolute pressure; 
+\begin_inset Formula $\overline{b}=1.013\times10^{10}$
+\end_inset
+
+ Pa, which is is a constant.
+\end_layout
+
+\begin_layout Standard
+Hence, we register
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+p-\overline{b}=\rho g\left(h-z\right)+\Delta b
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\Delta b$
+\end_inset
+
+ is the difference from the average barometer pressure.
+\end_layout
+
+\begin_layout Standard
+This above is true for piezometers in unconfined aquifers.
+ In confined and semi-confined aquifers, however, the pressure does not
+ change with 
+\begin_inset Formula $\Delta b$
+\end_inset
+
+ but by 
+\begin_inset Formula $LE\,\Delta b$
+\end_inset
+
+, where 
+\begin_inset Formula $LE$
+\end_inset
+
+ is the loading efficience.
+ This is because the increase in barometer pressure at ground surface is
+ only partly supported by pressure increase in the water in the (semi)confined
+ aquifer, the rest is supported by compression of the porous medium of that
+ aquifer.
+ Hence, if we name the head in (semi)confined aquifers 
+\begin_inset Formula $\phi$
+\end_inset
+
+ instead of 
+\begin_inset Formula $h$
+\end_inset
+
+ we will have
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+p-\overline{b}=\rho g\left(\phi-z\right)+LE\,\Delta b
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Correction of the barometer pressure is done by subtracting 
+\begin_inset Formula $\Delta b=b-\overline{b}$
+\end_inset
+
+ from the registered series.
+ For the tow aquifers this yields, with the corrected gauge resgistration
+ on the left side
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+p-\overline{b}-\Delta b & =\rho g\left(h-z\right)\\
+p-\overline{b}-\Delta b & =\rho g\left(\phi-z\right)+\left(LE-1\right)\Delta b
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+because 
+\begin_inset Formula $LE-1=BE$
+\end_inset
+
+, the so-called barometer efficiency we may also write
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+p-\overline{b}-\Delta b & =\rho g\left(h-z\right)\\
+p-\overline{b}-\Delta b & =\rho g\left(\phi-z\right)+BE\,\Delta b
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+From this we obtain the values for the head 
+\begin_inset Formula $h$
+\end_inset
+
+ in the unconfined aquifer and the head 
+\begin_inset Formula $\phi$
+\end_inset
+
+ in the (semi)confined aquifer:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+h & =z+\frac{p-\overline{b}-\Delta b}{\rho g}\\
+\phi & =z+\frac{p-\overline{b}-\Delta b}{\rho g}-BE\,\frac{\Delta b}{\rho g}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+which equals
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+h & =z+\frac{p-\overline{b}}{\rho g}-\frac{\Delta b}{\rho g}\\
+\phi & =z+\frac{p-\overline{b}}{\rho g}-LE\,\frac{\Delta b}{\rho g}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where the first term at the right is the uncorrected time series directly
+ from the pressure gauge and the second term is the barometer pressure correctio
+n needed to get the correct head 
+\begin_inset Formula $h$
+\end_inset
+
+ and 
+\begin_inset Formula $\phi$
+\end_inset
+
+ (i.e.
+ the true elevation of the water table in the piezometers) on the left side
+ of the equations.
+ If follows that without barometer correction, the gauged time series to
+ not reveal the true elevation of the water table in the piezometers, not
+ in unconfined aquifers neither in (semi)confined ones.
+ With correction we get the true head in unconfined aqufiers but still not
+ the true head in (semi)confined aqufiers.
+\end_layout
+
+\begin_layout Standard
+The loading efficiency 
+\begin_inset Formula $LE$
+\end_inset
+
+ and the barometer efficiency 
+\begin_inset Formula $BE=1-LE$
+\end_inset
+
+ can be derived from the compressibilities of the porous mediium and the
+ water given the porosity.
+ This is fully true for a truly confined aquifer.
+ If however the overlying layers are not completely impervious, the head
+ difference over the confining bed caused by the different impact of the
+ barometer in the unconfined and in the confined layer, will induce vertical
+ flow through the confined bed, which will equalize the heads over time.
+ The smaller the vertical resistance 
+\begin_inset Formula $c$
+\end_inset
+
+ [T] of the confining bed and the smaller the storage coefficient 
+\begin_inset Formula $S$
+\end_inset
+
+ [-] of the aquifer below the confining bed, the faster this equalization
+ takes place.
+ The time characteristic of the effect is
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+h-\phi=\left(h_{0}-\phi_{0}\right)e^{-\frac{t-t_{0}}{Sc}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where 
+\begin_inset Formula $Sc$
+\end_inset
+
+ is the time constant in this equation.
+ The halftime is 
+\begin_inset Formula $0.7Sc$
+\end_inset
+
+.
+ .
+ Tabel 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Speed-of-equalizing"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ compares two situations that are often encountered in practice: a thick
+ aquifer below a confining bed with high resistance against vertical flow
+ and a thin aquifer with a moderate resistance against vertical flow.
+ It can be seen from this table that the process of equalizing head differences
+ across confining beds tend to be fast under normal conditions.
+ For a truly confining bed, this characteristic time 
+\begin_inset Formula $Sc=\infty$
+\end_inset
+
+ and without resistance, i.e.
+ both piezometers in the same unconfined aquifer, the time 
+\begin_inset Formula $Sc=0$
+\end_inset
+
+.
+ In conclusion, in order to see the effect of barometer on the time series,
+ one needs to register at least serveral times per day and the confining
+ bed must have a substantial resistance, while the underlying aquifer is
+ not too thin in order to provide the required elastic storage capacity.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Speed-of-equalizing"
+
+\end_inset
+
+Speed of equalizing of head difference over confining bed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Aquifer
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+S [-]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+c [1/d]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sc [d]
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+thickk aquifer below high resistance
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.001
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+thin aquifer below moderage resistnce
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0001
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.01
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hence for a vertical resistance of 
+\end_layout
+
+\end_body
+\end_document
