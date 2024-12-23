@@ -1,12 +1,12 @@
 version: 2
 
 build:
-  os: "osx-14.2"
+  os: "osx-14.6.1"
   tools:
-    python: "3.9"
+    python: "3.12"
 
 conda:
-  environment: dosc/source/environment.yaml
+  environment: docs/source/environment.yaml
 
 # Build from the docs/source directory with Sphinx
 sphinx:

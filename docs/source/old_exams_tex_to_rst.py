@@ -42,7 +42,7 @@ tmpfile_2  = os.path.join(source,   basename_2 + '.tmp')
 rstfile_1  = os.path.join(source,   basename_1 + '.rst')
 rstfile_2  = os.path.join(source,   basename_2 + '.rst')
 
-for fname in [texfile_1, texfile_2]:
+for fname in [texfile_1, texfile_2]:.
     assert os.path.isfile(fname), FileNotFoundError(fname)
 
 # pandoc command setup for converting tex to rst
