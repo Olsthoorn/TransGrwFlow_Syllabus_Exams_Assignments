@@ -118,7 +118,7 @@
 \begin_body
 
 \begin_layout Title
-UNESCO-IHE
+IHE-Delft
 \begin_inset Newline newline
 \end_inset
 
@@ -131,9 +131,12 @@ Prof.
  dr.ir.
  T.
  N.
- Olsthoorn,
- PhD,
- MSc
+ Olsthoorn
+\end_layout
+
+\begin_layout Standard
+\align center
+tolsthoorn@gmail.com
 \end_layout
 
 \begin_layout Date
@@ -3692,7 +3695,7 @@ Loading efficiency
 
 \begin_layout Standard
 To analyze the physics of elastic storage,
- we start with noting that the total load at any depth is carried by the total (vertical pressure) 
+ we start by noting that the total weigth of the overburden at any depth is carried by the total (vertical pressure) 
 \begin_inset Formula $\sigma_{z}$
 \end_inset
 
@@ -3866,25 +3869,6 @@ nolink "false"
 \end_layout
 
 \begin_layout Standard
-Now assume that 
-\begin_inset Formula $\Delta p$
-\end_inset
-
- is not due to a layer of sand placed on ground surface,
- but due to a change of the barometer pressure as in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:LE-BE-barometer"
-nolink "false"
-
-\end_inset
-
-.
- Then the same reasoning applies,
- because the subsoil cannot know the difference between a pressure change due to a layer of sand placed on ground surface or due to an equivalent rise of the barometer pressue.
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float figure
 placement document
 alignment document
@@ -4022,7 +4006,26 @@ Barometer efficiency
 \end_layout
 
 \begin_layout Standard
-figure 
+Now assume that 
+\begin_inset Formula $\Delta p$
+\end_inset
+
+ is not due to a layer of sand placed on ground surface,
+ but due to a change of the barometer pressure as in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:LE-BE-barometer"
+nolink "false"
+
+\end_inset
+
+.
+ Then the same reasoning applies,
+ because the subsoil cannot know the difference between a pressure change due to a layer of sand placed on ground surface or due to an equivalent rise of the barometer pressue.
+\end_layout
+
+\begin_layout Standard
+Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:LE-BE-barometer"
@@ -4650,17 +4653,85 @@ The specific storage coefficient is the change of volume per unit volume of spac
 \end_layout
 
 \begin_layout Standard
+We have for an infinitisimally small slice of width 
+\begin_inset Formula $dx$
+\end_inset
+
+ of the aquifer the following partial differential equation
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+kD\frac{\partial^{2}\phi}{\partial x^{2}}=S\frac{\partial\phi}{\partial t}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The left-hand side is the net water inflow into this slice and the right-hand side is where it is stored.
+ We may repelace the left-hand side by 
+\begin_inset Formula $Q$
+\end_inset
+
+ and also replace the elastic storage coefficient of the aquifer by the product of the aquifer's specific storage coefficient 
+\begin_inset Formula $S_{s}$
+\end_inset
+
+ and the aquifer's thickness 
+\begin_inset Formula $D$
+\end_inset
+
+.
+ Hence
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Q_{in}=S_{S}D\frac{\partial\phi}{\partial t}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+so that
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-S_{s}=-\frac{\partial V/V_{0}}{\partial\phi}\label{eq:Ss-definition}
+S_{s}=\frac{\Delta Q\partial t}{D\partial\phi}=\frac{\Delta V_{w}/V}{\partial\phi}\label{eq:Ss-definition}
 \end{equation}
 
 \end_inset
 
-it is the volume of water released from the porous medium per m of lowering of the head 
+Hence,
+ 
+\begin_inset Formula $S_{s}$
+\end_inset
+
+ is the volume of water stored each unit of volume (1 m3) of the porous medium per m by which the the head 
 \begin_inset Formula $\phi$
 \end_inset
 
+ is raised.
  (a negative 
 \begin_inset Formula $\Delta\phi$
 \end_inset
@@ -4707,19 +4778,66 @@ Now consider the situation in which we lower the water pressure,
 \end_layout
 
 \begin_layout Standard
-However,
- the amount of water squeezed out of the porous medium changes.
- A lowering of head causes an increase of the effective pressure (grain pressure),
- and,
- hence,
- is associated with a compression of the porous medium.
+Now lets take a column of the aquifer in which we change these pressures and see what happens to the wate stored in this volume of the aquifer.
+ Because of symmetry,
+ any column in this aquifer column is perfectly stiff and can only swell or shrink in vertial direction when the effective stress changes.
+ Just consider a square meter of aquifer,
+ so that its volume 
+\begin_inset Formula $V=D$
+\end_inset
+
+ is the aquifer's thickness.
+ Now if we pump water into this column so that only the water pressure increases by 
+\begin_inset Formula $\Delta\sigma_{w}$
+\end_inset
+
+,
+ then the amount of water entering the column,
+ i.e.
+ extra stored inthis column,
+ by just increasing the water pressure equals:
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula 
+\[
+\Delta V_{w}=\alpha\left(\epsilon V_{0}\right)\Delta\sigma_{w}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A rise of the head and,
+ therefore,
+ of the water pressure increases the aount of water contained in the cosidered volume of the aquifer.
+\end_layout
+
+\begin_layout Standard
+An increase of the the effective pressure (grain pressure) is associated with a compression of the porous medium.
  Therefore,
  an increase of the effective pressure ( 
 \begin_inset Formula $\Delta\sigma_{e}>0$
 \end_inset
 
 ),
- reduces the pore volume by 
+ reduces the pore volume of the porous medium by 
 \begin_inset Formula $\Delta V$
 \end_inset
 
@@ -4729,7 +4847,7 @@ However,
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\Delta V_{pm}=+V_{0}\beta\Delta\sigma_{e}
+\Delta V_{pm}=-V_{0}\beta\Delta\sigma_{e}
 \]
 
 \end_inset
@@ -4747,46 +4865,40 @@ porous medium
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-An increase of the water pressure,
- would cause a compression of the water within the pores 
-\begin_inset Formula $\epsilon V_{0}$
+ Note that this 
+\begin_inset Formula $\Delta V_{pm}$
 \end_inset
 
-,
- by
+ is also the change of the pore space,
+ and therefore of the volume of water in the porous medium.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\[
-\Delta V_{w}=-\alpha\left(\epsilon V_{0}\right)\Delta\sigma_{w}
-\]
-
+The total change of volume of the column that is caused by in increase of the water pressure by 
+\begin_inset Formula $\Delta\sigma_{w}$
 \end_inset
 
+ and the effective stress by 
+\begin_inset Formula $\Delta\sigma_{e}$
+\end_inset
 
-\end_layout
-
-\begin_layout Standard
-The total amount of water released equals the volume squeezed out due to the reduction of the pore space plus the volume that is generated by expansion of the water due to the reduction of the water pressure:
+ is the sum of both:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{eqnarray*}
-\Delta V & = & -\alpha\left(\epsilon V_{0}\right)\Delta\sigma_{w}+V_{0}\beta\Delta\sigma_{e}
+\Delta V & = & \alpha\left(\epsilon V_{0}\right)\Delta\sigma_{w}-V_{0}\beta\Delta\sigma_{e}
 \end{eqnarray*}
 
 \end_inset
 
-and because 
+Because the total pressure at any point in the aquifer does not change when the head if changed,
+ we have 
 \begin_inset Formula $\Delta\sigma_{e}=-\Delta\sigma_{w}$
 \end_inset
 
- in this case (see equation 
+ (see equation 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:deltaSigma_w+deltaSigma_e=0"
@@ -4794,14 +4906,14 @@ nolink "false"
 
 \end_inset
 
-),
- we have
+) and,
+ therfore,
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\frac{\Delta V}{V_{0}}=-\left(\alpha\epsilon+\beta\right)\Delta\sigma_{w}
+\frac{\Delta V}{V_{0}}=\left(\alpha\epsilon+\beta\right)\Delta\sigma_{w}
 \]
 
 \end_inset
@@ -4812,7 +4924,7 @@ so that
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\frac{\Delta V/V_{0}}{\Delta\sigma_{w}}=-\left(\epsilon\alpha+\beta\right)
+\frac{\Delta V/V_{0}}{\Delta\sigma_{w}}=\left(\epsilon\alpha+\beta\right)
 \]
 
 \end_inset
@@ -4834,24 +4946,8 @@ nolink "false"
 
 
 \begin_inset Formula 
-\begin{eqnarray}
-\frac{\Delta V/V_{0}}{\rho g\Delta\phi} & =- & \left(\epsilon\alpha+\beta\right)\label{eq:specific-storage-from-soil-and-water-stiffness}
-\end{eqnarray}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-and,
- therefore
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
 \[
-\frac{\Delta V/V_{0}}{\Delta\phi}=-\rho g\left(\epsilon\alpha+\beta\right)
+\frac{\Delta V/V_{0}}{\Delta\phi}=\rho g\left(\epsilon\alpha+\beta\right)
 \]
 
 \end_inset
@@ -4861,7 +4957,7 @@ and,
 
 \begin_layout Standard
 so that with 
-\begin_inset Formula $S_{s}=-\frac{\Delta V/V_{0}}{\Delta\phi}$
+\begin_inset Formula $S_{s}=\frac{\Delta V/V_{0}}{\Delta\phi}$
 \end_inset
 
 ,
@@ -15126,7 +15222,7 @@ Below we give an implementation of the Theis and Hantush well functions in Pytho
  The Python implementation is powerful because one function call can handle millions of numbers at once.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsubsection
 Theis' well function (exponential integral)
 \end_layout
 
@@ -15359,7 +15455,7 @@ exp1
  scipy.special.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsubsection
 Hantush well function
 \end_layout
 
@@ -15382,7 +15478,7 @@ def Wh(u,
 
 \begin_layout Plain Layout
 
-    """Return Hantush well function by integration using scipy functinality.
+    """Return Hantush well function by integration using scipy functionality.
 \end_layout
 
 \begin_layout Plain Layout
@@ -15408,9 +15504,13 @@ def Wh(u,
 
 \begin_layout Plain Layout
 
-    def kernel(y,
+    def integrand(y,
  rho):
- return np.exp(-y - (rho/2) ** 2 / y ) / y
+\end_layout
+
+\begin_layout Plain Layout
+
+		return np.exp(-y - (rho/2) ** 2 / y ) / y
 \end_layout
 
 \begin_layout Plain Layout
@@ -15421,7 +15521,56 @@ def Wh(u,
 
     def w(u,
  rho):
- return quad(kernel,
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+Return the result of the integration
+\end_layout
+
+\begin_layout Plain Layout
+
+		Notice that quad returns both the result of the integration and it's error esitmate.
+\end_layout
+
+\begin_layout Plain Layout
+
+		We only need the result.
+ The error is about 1e-9!
+\end_layout
+
+\begin_layout Plain Layout
+
+	    
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		return quad(integrand,
  u,
  np.inf,
  args=(rho))
@@ -15433,9 +15582,17 @@ def Wh(u,
 
 \begin_layout Plain Layout
 
-    wh = np.frompyfunc(w,
- 2,
- 2) # 2 inputs and two outputs h and err
+	# np.vectorize converts the function w which takes only float as its parameters into a ufunc which
+\end_layout
+
+\begin_layout Plain Layout
+
+	# also works on arrays:
+\end_layout
+
+\begin_layout Plain Layout
+
+    wh = np.vectorize(w)
 \end_layout
 
 \begin_layout Plain Layout
@@ -15444,8 +15601,19 @@ def Wh(u,
 
 \begin_layout Plain Layout
 
-    return wh(u,
- rho)[0] # cut-off err
+	result,
+ _ = wh(u,
+ rho) # Get both the result and the error,
+ we discard the error (in variable `_`)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    return result
 \end_layout
 
 \end_inset
@@ -15493,6 +15661,92 @@ You now have three ways to compute the Theis well function:
 \begin_layout Standard
 The Hantush well function can also be expressed as a power series.
  But this is beyond this current course.
+\end_layout
+
+\begin_layout Subsubsection
+Derivation of Bruggeman's form of the Hantush well function
+\end_layout
+
+\begin_layout Standard
+Bruggeman (1999) uses an adapted form of Hantush's well function,
+ such that the two parameters that the function takes have separated paramters time and distance,
+ i.e.
+ they have no overlap and are,
+ therefore,
+ not correlated.
+ The latter is not true with Hantush's original formula,
+ in which both the 
+\begin_inset Formula $u=\frac{r^{2}S}{4kDt}$
+\end_inset
+
+ and 
+\begin_inset Formula $\rho=\frac{r}{\lambda}=\frac{r}{\sqrt{kDc}}$
+\end_inset
+
+ parameters contain 
+\begin_inset Formula $r$
+\end_inset
+
+.
+ Is seems obvious that Hantush aimed to stay close to Theis's solution,
+ which had just the 
+\begin_inset Formula $u$
+\end_inset
+
+ as its single parameter.
+\end_layout
+
+\begin_layout Standard
+Hantush's formula as defined by Bruggeman (1999,
+ p877):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+s\left(\tau,\rho\right)=\intop_{0}^{\tau}\frac{e^{-x-\frac{\rho^{2}}{4x}}}{x}dx
+\]
+
+\end_inset
+
+by substituting 
+\begin_inset Formula $y=\frac{\rho^{2}}{4x}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+s\left(\tau,\rho\right) & =\intop_{x=0}^{x=\tau}\frac{e^{-\frac{\rho^{2}}{4y}-y}}{\frac{\rho^{2}}{4y}}d\frac{\rho^{2}}{4y}\\
+ & =\intop_{y=\infty}^{y=\frac{\rho^{2}}{4\tau}}\frac{e^{-\frac{\rho^{2}}{4y}-y}}{\frac{\rho^{2}}{4y}}\frac{\rho^{2}}{4}(\frac{-1}{y^{2}})dy\\
+ & =\intop_{\frac{\rho^{2}}{4\tau}}^{\infty}\frac{e^{-\frac{\rho^{2}}{4y}-y}}{y}dy
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+With 
+\begin_inset Formula $\tau=\eta t=\frac{t}{cS}\rightarrow\frac{\rho^{2}}{4\tau}=\frac{r^{2}}{4\lambda^{2}}\frac{cS}{t}=\frac{r^{2}S}{4kDt}=u$
+\end_inset
+
+,
+ so that we now get the Hantush function in its original form
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+s\left(\tau,\rho\right)=\intop_{u}^{\infty}\frac{e^{-y-\frac{\rho^{2}}{4y}}}{y}dy
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -15847,7 +16101,7 @@ h^{2}-D^{2}=\frac{Q}{2\pi k}\mbox{W}\left(u\right)\mbox{, }u=\frac{r^{2}S}{4k\ov
 
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsubsection
 Inflection points in the graphs of the Hantush well functions on half-logarithmic scales (well functions versus log of 
 \begin_inset Formula $1/u$
 \end_inset
@@ -15979,26 +16233,15 @@ Theis and Hantush function at linear vertical and logarithmic horizontal scale (
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Box Boxed
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-use_makebox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-thickness "0.4pt"
-separation "3pt"
-shadowsize "4pt"
-framecolor "black"
-backgroundcolor "none"
-status open
+\begin_layout Subsubsection
+Derivation of the inflexion points in Hatush well function on graphs with logarithmic 
+\begin_inset Formula $1/u$
+\end_inset
 
-\begin_layout Plain Layout
+ scale.
+\end_layout
+
+\begin_layout Standard
 Derivation of the reflection point of the Hantush Well fucntion on logarithmic scale of 
 \begin_inset Formula $1/u$
 \end_inset
@@ -16006,23 +16249,23 @@ Derivation of the reflection point of the Hantush Well fucntion on logarithmic s
 .
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 We seek the seek the second derivative of the Hantush Well function with respect to 
 \begin_inset Formula $\eta=\ln\left(\frac{1}{u}\right)=-\ln u$
 \end_inset
 
- sothat 
+ so that 
 \begin_inset Formula $u=e^{-\eta}$
 \end_inset
 
 
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 We have
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 \begin_inset Formula 
 \[
 W_{h}=\intop_{u}^{\infty}\frac{e^{-y-\frac{\gamma}{y}}}{y}dy,\,\,\,\,\gamma=\left(\frac{r}{2\lambda}\right)^{2},\,\,\,\,u=e^{-\eta},\,\,\,\,\frac{\partial u}{\partial\eta}=-e^{-\eta}=-u
@@ -16033,7 +16276,7 @@ W_{h}=\intop_{u}^{\infty}\frac{e^{-y-\frac{\gamma}{y}}}{y}dy,\,\,\,\,\gamma=\lef
 
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 \begin_inset Formula 
 \[
 \frac{\partial W_{h}}{\partial\eta}=\frac{e^{-u-\frac{\gamma}{u}}}{u}\frac{\partial u}{\partial\eta}=-e^{-u-\frac{\gamma}{u}}
@@ -16044,7 +16287,7 @@ W_{h}=\intop_{u}^{\infty}\frac{e^{-y-\frac{\gamma}{y}}}{y}dy,\,\,\,\,\gamma=\lef
 
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 \begin_inset Formula 
 \begin{align*}
 \frac{\partial^{2}W_{h}}{\partial\eta^{2}} & =e^{-u-\frac{\gamma}{u}}\left(-1+\frac{\gamma}{u^{2}}\right)\left(-u\right)\\
@@ -16056,7 +16299,7 @@ W_{h}=\intop_{u}^{\infty}\frac{e^{-y-\frac{\gamma}{y}}}{y}dy,\,\,\,\,\gamma=\lef
 
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 To find the inflection point we set the second derivative with respect to 
 \begin_inset Formula $\eta$
 \end_inset
@@ -16086,13 +16329,12 @@ To find the inflection point we set the second derivative with respect to
 \end_inset
 
 ,
- that is to.
- 
+ that is to 
 \begin_inset Formula $t\rightarrow\infty$
 \end_inset
 
 ,
- which implies that staeady state has been reached.
+ which implies that steady state has been reached.
  
 \begin_inset Formula $u=\infty$
 \end_inset
@@ -16106,7 +16348,7 @@ To find the inflection point we set the second derivative with respect to
 \end_inset
 
 ,
- which implies that the drawdown has not yet reached the pont of observation because the time is to short or the distance to large.
+ which implies that the drawdown has not yet reached the point of observation because the time is either still to short or the distance to great.
  Clearly the three values of 
 \begin_inset Formula $u$
 \end_inset
@@ -16131,7 +16373,7 @@ To find the inflection point we set the second derivative with respect to
  therefore,
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 \begin_inset Formula 
 \[
 \left(\frac{r}{2\lambda}\right)^{2}=u^{2}
@@ -16142,11 +16384,11 @@ To find the inflection point we set the second derivative with respect to
 
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 or
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 \begin_inset Formula 
 \[
 u=\frac{r}{2\lambda}=\frac{\rho}{2}
@@ -16157,12 +16399,14 @@ u=\frac{r}{2\lambda}=\frac{\rho}{2}
 
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 with 
 \begin_inset Formula $\eta=\ln\frac{1}{u}$
 \end_inset
 
- en dus 
+ and,
+ therfore,
+ 
 \begin_inset Formula $u=-e^{\eta}$
 \end_inset
 
@@ -16178,7 +16422,7 @@ with
 
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 The corresponding interesting aspect is the tangent of the well function through the inflection point.
  It is found from 
 \begin_inset Formula $\frac{\partial W_{h}}{\partial\eta}$
@@ -16192,7 +16436,7 @@ The corresponding interesting aspect is the tangent of the well function through
  Hence,
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 
 \family roman
 \series medium
@@ -16216,11 +16460,11 @@ The corresponding interesting aspect is the tangent of the well function through
 
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 Which is the second beautiful result of this mathematical analysis.
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 The stationary value for 
 \begin_inset Formula $W_{h}(u,\rho)$
 \end_inset
@@ -16248,7 +16492,7 @@ The stationary value for
 
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 \begin_inset Formula 
 \[
 W_{h}\left(0,\rho\right)=2K_{0}\left(\rho\right)=K_{0}\left(\rho\right)+e^{-\rho}\left(\eta+\ln\left(\frac{\rho}{2}\right)\right)
@@ -16259,7 +16503,7 @@ W_{h}\left(0,\rho\right)=2K_{0}\left(\rho\right)=K_{0}\left(\rho\right)+e^{-\rho
 
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 \begin_inset Formula 
 \[
 \eta=e^{\rho}K_{0}\left(\rho\right)-\ln\frac{\rho}{2}
@@ -16270,782 +16514,12 @@ W_{h}\left(0,\rho\right)=2K_{0}\left(\rho\right)=K_{0}\left(\rho\right)+e^{-\rho
 
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 \begin_inset Formula 
 \begin{align*}
 \eta & =-\ln u=e^{-\rho}K_{0}\left(\rho\right)+\ln\left(\frac{\rho}{2}\right)\\
 u & =-\exp\left(e^{-\rho}K_{0}\left(\rho\right)+\ln\left(\frac{\rho}{2}\right)\right)
 \end{align*}
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Box Boxed
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-use_makebox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-thickness "0.4pt"
-separation "3pt"
-shadowsize "4pt"
-framecolor "black"
-backgroundcolor "none"
-status open
-
-\begin_layout Plain Layout
-Bruggeman (1999),
- Hantush well function.
-\end_layout
-
-\begin_layout Plain Layout
-Bruggeman (1999) uses an adapted form of Hantush's well function,
- such that the two parameters that the function takes have area separate,
- i.e.
- they have no overlap and are,
- therefore,
- incorrelated.
- This is not true with Hantush's original formula,
- in which both the 
-\begin_inset Formula $u=\frac{r^{2}S}{4kDt}$
-\end_inset
-
- and 
-\begin_inset Formula $\rho=\frac{r}{\lambda}=\frac{r}{\sqrt{kDc}}$
-\end_inset
-
- both contain 
-\begin_inset Formula $r$
-\end_inset
-
- and 
-\begin_inset Formula $kD$
-\end_inset
-
-.
- Is seems obvious that Hantush aimed to stay close to Theis's solution,
- which had just the 
-\begin_inset Formula $u$
-\end_inset
-
- as its single parameter.
-\end_layout
-
-\begin_layout Plain Layout
-Hantush's formula as defined by Bruggeman (1999,
- p877):
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Formula 
-\[
-s\left(\tau,\rho\right)=\intop_{0}^{\tau}\frac{e^{-x-\frac{\rho^{2}}{4x}}}{x}dx
-\]
-
-\end_inset
-
-by substituting 
-\begin_inset Formula $y=\frac{\rho^{2}}{4x}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Formula 
-\begin{align*}
-s\left(\tau,\rho\right) & =\intop_{x=0}^{x=\tau}\frac{e^{-\frac{\rho^{2}}{4y}-y}}{\frac{\rho^{2}}{4y}}d\frac{\rho^{2}}{4y}\\
- & =\intop_{y=\infty}^{y=\frac{\rho^{2}}{4\tau}}\frac{e^{-\frac{\rho^{2}}{4y}-y}}{\frac{\rho^{2}}{4y}}\frac{\rho^{2}}{4}(\frac{-1}{y^{2}})dy\\
- & =\intop_{\frac{\rho^{2}}{4\tau}}^{\infty}\frac{e^{-\frac{\rho^{2}}{4y}-y}}{y}dy
-\end{align*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-With 
-\begin_inset Formula $\tau=\eta t=\frac{t}{cS}\rightarrow\frac{\rho^{2}}{4\tau}=\frac{r^{2}}{4\lambda^{2}}\frac{cS}{t}=\frac{r^{2}S}{4kDt}=u$
-\end_inset
-
-,
- so that we get the Hantush function in its original form
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Formula 
-\[
-s\left(\tau,\rho\right)=\intop_{u}^{\infty}\frac{e^{-y-\frac{\rho^{2}}{4y}}}{y}dy
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Formula 
-\[
-\]
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Box Boxed
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-use_makebox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-thickness "0.4pt"
-separation "3pt"
-shadowsize "4pt"
-framecolor "black"
-backgroundcolor "none"
-status open
-
-\begin_layout Plain Layout
-Well in infinite confined aquifer with exponentially decreasing extraction.
-\end_layout
-
-\begin_layout Plain Layout
-Bruggeman (1999,
- 215.07,
- p158):
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Formula 
-\begin{align*}
-s\left(r,t\right) & =\frac{Q_{0}e^{-\frac{t}{T}}}{4\pi kD}\mbox{\mbox{W}}\left(-\frac{t}{T},\,i\sqrt{\frac{r^{2}S}{kDT}}\right)
-\end{align*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Formula 
-\[
-\beta=\sqrt{\frac{S}{kD}}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Bemlaling tussen
-\begin_inset Formula $t=t_{1}$
-\end_inset
-
- en 
-\begin_inset Formula $t=t_{2}$
-\end_inset
-
- met 
-\begin_inset Formula $Q$
-\end_inset
-
- zodanig dat de vereiste verlaging op afstand 
-\begin_inset Formula $r$
-\end_inset
-
- wordt bereikt oop 
-\begin_inset Formula $t=t_{1}$
-\end_inset
-
- waarna het debiet wordt terug geschroefd met 
-\begin_inset Formula $\Delta Q$
-\end_inset
-
- die zodanig is dat de verlaging 
-\begin_inset Formula $s$
-\end_inset
-
- aan het eind van de bemalingsperiode,
- 
-\begin_inset Formula $t=t_{2}$
-\end_inset
-
- ook gelijk is aan de vereiste verlaging 
-\begin_inset Formula $s$
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Standard
-Situatie op 
-\begin_inset Formula $t_{1}$
-\end_inset
-
-
-\begin_inset Formula 
-\[
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-s=\frac{Q}{4\pi kD}\ln\left(\frac{2.25kD\left(t_{1}-t_{0}\right)}{r^{2}S}\right)
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Situatie op 
-\begin_inset Formula $t_{2}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-s=\frac{Q}{4\pi kD}\ln\left(\frac{2.25kD\left(t_{2}-t_{0}\right)}{r^{2}S}\right)-\frac{\Delta Q}{4\pi kD}\ln\left(\frac{2.25kD\left(t_{2}-t_{1}\right)}{r^{2}S}\right)
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-s
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\ln\left(\frac{2.25kD\left(t_{1}-t_{0}\right)}{r^{2}S}\right)=\ln\left(\frac{2.25kD\left(t_{2}-t_{0}\right)}{r^{2}S}\right)-\frac{\Delta Q}{Q}\ln\left(\frac{2.25kD\left(t_{2}-t_{1}\right)}{r^{2}S}\right)
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{align*}
-\frac{\Delta Q}{Q}\ln\left(\frac{2.25kD\left(t_{2}-t_{1}\right)}{r^{2}S}\right) & =\ln\left(\frac{2.25kD\left(t_{2}-t_{0}\right)}{r^{2}S}\right)--\ln\left(\frac{2.25kD\left(t_{1}-t_{0}\right)}{r^{2}S}\right)\\
-\frac{\Delta Q}{Q} & =\frac{\ln\left(\frac{t_{2}-t_{0}}{t_{1}-t_{0}}\right)}{\ln\left(\frac{2.25kD\left(t_{2}-t_{1}\right)}{r^{2}S}\right)}
-\end{align*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Convolutie Bruggeman 215.01 en 215.02
-\end_layout
-
-\begin_layout Standard
-Impuls reponse
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\phi\left(r,t\right)=\frac{Qdt}{4\pi kDt}\exp\left(-\frac{r^{2}S}{4kD\,t}\right)
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Oplossing voor 
-\begin_inset Formula $Q=Q\left(t\right)$
-\end_inset
-
-,
- een willekeurige functie van de tijd,
- is direct berekenbaar door convolutie.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{align*}
-\phi\left(r,t\right) & =\frac{1}{4\pi kD}\intop_{\tau=0}^{\infty}Q\left(t-\tau\right)\exp\left(-\frac{r^{2}S}{4kD\tau}\right)d\tau\\
- & =\frac{1}{4\pi kD}\intop_{\tau=\frac{4kD\tau}{r^{2}S}}^{\infty}Q\left(t-\tau\right)\exp\left(-\frac{r^{2}S}{4kD\tau}\right)d\frac{4kD\tau}{r^{2}S}\times\frac{r^{2}S}{4kD}\\
- & =\frac{1}{4\pi kD}\intop_{\tau=\frac{4kD\tau}{r^{2}S}}^{\infty}Q\left(t-\tau\right)\exp\left(-u\right)d\frac{1}{u}\times\frac{r^{2}S}{4kD}\\
- & =\frac{1}{4\pi kD}\intop_{\tau=\frac{4kD\tau}{r^{2}S}}^{\infty}Q\left(t-\tau\right)\exp\left(-u\right)d\frac{1}{u}\times\frac{r^{2}S}{4kD}
-\end{align*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-s=\frac{Q}{4\pi kD}\ln\left(\frac{2.25kDt}{r^{2}S}\right)
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Hoe moet de onttrekking 
-\begin_inset Formula $Q$
-\end_inset
-
- worden bijgesteld met 
-\begin_inset Formula $\Delta Q$
-\end_inset
-
- om de verlaging op 
-\begin_inset Formula $t=t_{1}$
-\end_inset
-
- vast te houden?
-\end_layout
-
-\begin_layout Standard
-De toename van de verlaging op 
-\begin_inset Formula $t$
-\end_inset
-
- volgens de vereenvoudigede benadering van Theis is als volgt:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{align*}
-\frac{\partial s}{\partial t} & =\frac{Q}{4\pi kD}\frac{r^{2}S}{2.25kDt}\frac{2.25kD}{r^{2}S}\\
-\frac{\partial s}{\partial t} & =\frac{Q}{4\pi kDt}
-\end{align*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Dus moet de toename van de verlaging per tijdseenheid op 
-\begin_inset Formula $t=t_{1}$
-\end_inset
-
- door onttrekking 
-\begin_inset Formula $Q$
-\end_inset
-
- gelijk zijn aan de afname door 
-\begin_inset Formula $\Delta Q$
-\end_inset
-
- op een tijdstip korte tijd na 
-\begin_inset Formula $t_{1},$
-\end_inset
-
-zeg op 
-\begin_inset Formula $t=t_{1}+\Delta t$
-\end_inset
-
-,
- dus 
-\begin_inset Formula $\Delta t$
-\end_inset
-
- na de veranderingvan 
-\begin_inset Formula $Q$
-\end_inset
-
- met 
-\begin_inset Formula $-\Delta Q$
-\end_inset
-
-:
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{align*}
-\left(\frac{\partial s}{\partial t}\right)_{t=t_{1}} & =\frac{Q}{4\pi kDt_{1}}\\
-\left(\frac{\partial s}{\partial t}\right)_{t=\Delta t} & =-\frac{\Delta Q}{4\pi kD\Delta t}
-\end{align*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Aldus
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{align*}
-\frac{Q}{4\pi kDt_{1}} & =\frac{\Delta Q}{4\pi kD\Delta t}\\
-\frac{\Delta t}{t_{1}-t_{0}} & =\frac{\Delta Q}{Q}
-\end{align*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Bij gegeven 
-\begin_inset Formula $t_{1}-t_{0}$
-\end_inset
-
- en gekozen 
-\begin_inset Formula $\Delta t$
-\end_inset
-
- is 
-\begin_inset Formula $\Delta Q$
-\end_inset
-
- nu bekend.
- Stel 
-\begin_inset Formula $t_{1}-t_{0}=7$
-\end_inset
-
- d en de toename van de verlaging moet na 4 h of 1/6 dag stoppen,
- dan is
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\frac{\Delta Q}{Q}=\frac{1}{6\times7}=0.024
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Bettenett
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-Q(t)=2\pi kD\,H\,G\left(\frac{kDt}{r^{2}S}\right)
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-G(\beta)=\frac{4\beta}{\pi}\intop_{x=0}^{\infty}xe^{-\beta x^{2}}\left[\frac{\pi}{2}+\arctan\frac{K_{0}(x)}{J_{0}(x)}\right]dx,\,\,\,\,\beta=\frac{kDt}{r^{2}S}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Het argument 
-\begin_inset Formula $\frac{\pi}{2}+\arctan\frac{K_{0}(x)}{J_{0}(x)}\rightarrow\pi$
-\end_inset
-
- voor toenemende 
-\begin_inset Formula $x$
-\end_inset
-
-.
- Voor grotere 
-\begin_inset Formula $x$
-\end_inset
-
-,
- 
-\begin_inset Formula $x>x_{0}$
-\end_inset
-
- gaat de integraal dus over in
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{align*}
-G(\beta) & =4\beta\intop_{x=x_{0}}^{\infty}xe^{-\beta x^{2}}dx\\
- & =4\beta\intop_{x=x_{0}}^{\infty}xe^{-\beta x^{2}}dx
-\end{align*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Ferris,
- Knowles,
- Brown and Stallman (Theory of aquifer tests,
- USGS Water-Supply Paper 1536-E,
- Theory of aquifer tests.
- 1962),
- p110ff
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-Q=2\pi kDs_{w}G\left(\alpha\right)
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-G\left(\alpha\right)=\frac{4\alpha}{\pi}\intop_{0}^{\infty}xe^{-\alpha x^{2}}\left[\frac{\pi}{2}+\tan^{-1}\frac{Y_{0}\left(x\right)}{J_{0}\left(x\right)}\right]dx
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\alpha=\frac{Tt}{r_{w}^{2}S}=\frac{4}{4}\frac{kDt}{r^{2}S}=\frac{1}{4u}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-\begin_inset Formula 
-\[
-G\left(u\right)=\frac{1}{\pi u}\intop_{0}^{\infty}xe^{-\frac{x^{2}}{4u}}\left[\frac{\pi}{2}+\tan^{-1}\frac{Y_{0}\left(x\right)}{J_{0}\left(x\right)}\right]dx
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-De uitwerking staat in
-\end_layout
-
-\begin_layout Standard
-Glover,
- RE (1974) Transient Groundwater Hydraulics.
- Soft cover 424 p.
- ISBN 13:978-1-887201-56-8
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-s=s_{a}\left[1-\sum_{n=1}^{\infty}A_{n}U_{0}\left(\beta_{n}r\right)e^{-\left(\frac{k\left(\beta_{n}b\right)}{2}\right)^{2}\left(\frac{2kDt}{r_{w}^{2}S}\right)}\right]
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-With 
-\begin_inset Formula $b$
-\end_inset
-
- is the boundary radius of the domain.
- Can be used as radius of influence.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-A_{n}=\frac{\frac{2k}{\beta_{n}b}U_{0}\left(\beta_{n}r_{w}\right)}{\left(U_{0}\left(\beta_{n}b\right)\right)^{2}+k^{2}\left(U_{0}^{'}\left(\beta_{n}r_{w}\right)\right)^{2}}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-U_{0}\left(\beta_{n}r\right)=J_{0}\left(\beta_{n}r_{w}\right)Y_{0}\left(\beta_{n}r\right)-Y_{0}\left(\beta_{n}r_{w}\right)J_{0}\left(\beta_{n}r\right)
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-k=\frac{b}{r_{w}}
-\]
-
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-The 
-\begin_inset Formula $\beta_{n}b$
-\end_inset
-
- values are to be obtained as roots of the equation
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-U_{0}'\left(\beta_{n}b\right)=0
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-In these expressions,
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-U_{0}'\left(\beta_{n}r\right)=\frac{dU_{0}\left(\beta_{n}r\right)}{d\left(\beta_{n}r\right)}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-J_{0}'\left(\beta_{n}r\right)=\frac{dJ_{0}\left(\beta_{n}r\right)}{d\left(\beta_{n}r\right)}=-J_{1}\left(\beta_{n}r\right)
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-Y_{0}\left(\beta_{n}r\right)=\frac{dY_{0}\left(\beta_{n}r\right)}{d\left(\beta_{n}r\right)}=-Y_{1}\left(\beta_{n}r\right)
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-The flow towards the well is
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-F=2\pi kD\frac{\partial y}{\partial r}=2\pi kDy_{0}\sum_{n=1}^{\infty}A_{n}\left(\beta_{n}r\right)U_{0}'\left(\beta_{n}r\right)e^{-\left(\frac{k\left(\beta_{n}r\right)}{2}\right)^{2}}\left(\frac{4kDt}{r_{w}^{2}S}\right)
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-The flow at radius 
-\begin_inset Formula $r_{w}$
-\end_inset
-
- is
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-Q=2\pi kDy_{0}G\left(\sqrt{\frac{4kDt}{r_{w}^{2}S}}\right)
-\]
 
 \end_inset
 
@@ -17205,8 +16679,8 @@ nolink "false"
 \begin_inset Formula 
 \begin{align*}
 \mathrm{W}\left(u\right) & \approx-\gamma-\ln u\\
- & \approx-0.577216-\ln\left(\frac{r^{2}S}{4kDt}\right)\\
- & \approx\ln0.5614+\ln\left(\frac{4kDt}{r^{2}S}\right)\\
+ & \approx\ln\left(\frac{e^{-\gamma}}{u}\right)\\
+ & \approx\ln\left(\frac{0.561}{u}\right)\\
  & \approx\ln\left(\frac{2.25kDt}{r^{2}S}\right)\mbox{, with }u<0.1
 \end{align*}
 
